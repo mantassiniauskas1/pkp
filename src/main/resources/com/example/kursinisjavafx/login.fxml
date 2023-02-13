@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="342.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinisjavafx.Controller.LoginController">
+   <bottom>
+      <AnchorPane prefHeight="131.0" prefWidth="342.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="loginButton" alignment="CENTER" layoutX="50.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="53.0" prefWidth="242.0" style="-fx-background-color: #e0ae6c;" text="Login" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="29.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="109.0" layoutY="83.0" text="Don't have an account?" />
+            <Label fx:id="signupLabel" alignment="CENTER" layoutX="132.0" layoutY="100.0" onMouseClicked="#signupLabelOnMouseClicked" text="SIGN UP NOW" textFill="#0f0fff" />
+         </children></AnchorPane>
+   </bottom>
+   <top>
+      <AnchorPane prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #e0ae6c;" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Label alignment="CENTER" layoutX="81.0" layoutY="17.0" prefHeight="87.0" prefWidth="181.0" text="Login" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="55.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <PasswordField fx:id="passwordTextField" layoutX="50.0" layoutY="88.0" prefHeight="25.0" prefWidth="242.0" promptText="Password" />
+            <TextField fx:id="usernameTextField" layoutX="50.0" layoutY="46.0" prefHeight="28.0" prefWidth="242.0" promptText="Username" />
+            <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="50.0" layoutY="127.0" prefHeight="17.0" prefWidth="242.0" textFill="#c94848">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

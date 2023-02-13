@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinisjavafx.Controller.MainMenuController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="General">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="363.0">
+                     <children>
+                        <Label fx:id="assignAnOrderText" alignment="CENTER" layoutX="46.0" layoutY="222.0" prefHeight="32.0" prefWidth="146.0" text="Assign an order">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="welcomeLabel" layoutX="44.0" layoutY="33.0" prefHeight="42.0" prefWidth="341.0" text="welcomeLabel">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="currentOrderIdLabel" layoutX="44.0" layoutY="94.0" prefHeight="37.0" prefWidth="396.0" text="Your current order ID is: None">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Line endX="703.0" layoutX="101.0" layoutY="194.0" startX="-100.0" />
+                        <Button fx:id="completeCurrentOrderButton" layoutX="425.0" layoutY="95.0" mnemonicParsing="false" onAction="#completeCurrentOrderButtonOnAction" prefHeight="35.0" prefWidth="161.0" text="Complete current order" />
+                        <ComboBox fx:id="generalOrderIdComboBox" layoutX="44.0" layoutY="307.0" prefWidth="150.0" promptText="Order ID:" />
+                        <ComboBox fx:id="generalVehicleIdComboBox" layoutX="44.0" layoutY="349.0" prefWidth="150.0" promptText="Vehicle ID:" />
+                        <Button fx:id="assignOrderButton" layoutX="65.0" layoutY="415.0" mnemonicParsing="false" onAction="#assignOrderButtonOnAction" prefHeight="34.0" prefWidth="109.0" text="Assign order" />
+                        <Line endX="-68.0" endY="232.0" layoutX="302.0" layoutY="343.0" startX="-68.0" startY="-148.5" />
+                        <Label alignment="TOP_CENTER" layoutX="302.0" layoutY="222.0" prefHeight="30.0" prefWidth="416.0" text="Personal information">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="generalDriverIdComboBox" layoutX="44.0" layoutY="267.0" prefWidth="150.0" promptText="Driver ID:" />
+                        <Button fx:id="generalRefreshButton" layoutX="94.0" layoutY="507.0" mnemonicParsing="false" onAction="#generalRefreshButtonOnAction" text="Refresh" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Orders">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="orderTableView" layoutX="11.0" layoutY="17.0" prefHeight="377.0" prefWidth="607.0" />
+                        <Button fx:id="createOrderButton" layoutX="670.0" layoutY="54.0" mnemonicParsing="false" onAction="#createOrderButtonOnAction" prefHeight="39.0" prefWidth="79.0" text="Create" />
+                        <Button fx:id="updateOrderButton" layoutX="674.0" layoutY="274.0" mnemonicParsing="false" onAction="#updateOrderButtonOnAction" prefHeight="36.0" prefWidth="71.0" text="Update" />
+                        <Button fx:id="deleteOrderButton" layoutX="666.0" layoutY="206.0" mnemonicParsing="false" onAction="#deleteOrderButtonOnAction" prefHeight="26.0" prefWidth="88.0" text="Delete" />
+                        <TextField fx:id="orderTextField" layoutX="635.0" layoutY="159.0" promptText="Enter ID:" />
+                        <BarChart fx:id="ordersBarChart" layoutX="11.0" layoutY="407.0" prefHeight="150.0" prefWidth="607.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Forum">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="postListView" layoutX="14.0" layoutY="24.0" prefHeight="524.0" prefWidth="550.0" style="-fx-background-color: grey;" />
+                        <TextField fx:id="forumTitleTextField" layoutX="578.0" layoutY="24.0" prefHeight="25.0" prefWidth="197.0" promptText="Title:" />
+                        <Button fx:id="forumCreatePostButton" layoutX="578.0" layoutY="274.0" mnemonicParsing="false" onAction="#forumCreatePostButtonOnAction" prefHeight="25.0" prefWidth="202.0" text="Create post" />
+                        <TextArea fx:id="forumContentTextField" layoutX="579.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" promptText="Content:" />
+                        <Text fx:id="forumTitleErrorText" fill="RED" layoutX="579.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A post with such title already exists." textAlignment="CENTER" visible="false" wrappingWidth="197.55859375" />
+                        <Button fx:id="forumDeletePostButton" layoutX="579.0" layoutY="337.0" mnemonicParsing="false" onAction="#forumDeletePostButtonOnAction" prefHeight="25.0" prefWidth="202.0" text="Delete" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="usersTab" text="Users">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="userTableView" layoutX="-6.0" layoutY="-2.0" prefHeight="572.0" prefWidth="651.0" />
+                        <TextField fx:id="usernameTextField" layoutX="655.0" layoutY="134.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter username:" />
+                        <Button fx:id="deleteUserButton" layoutX="679.0" layoutY="269.0" mnemonicParsing="false" onAction="#deleteUserButtonOnAction" prefHeight="33.0" prefWidth="91.0" text="Delete" />
+                        <Button fx:id="setRoleButton" layoutX="680.0" layoutY="226.0" mnemonicParsing="false" onAction="#setRoleButtonOnAction" prefHeight="31.0" prefWidth="90.0" text="Set Role" />
+                        <ComboBox fx:id="roleComboBox" layoutX="650.0" layoutY="173.0" prefWidth="150.0" promptText="Select role" />
+                        <Button fx:id="refreshUserButton" layoutX="697.0" layoutY="450.0" mnemonicParsing="false" onAction="#refreshUserButtonOnAction" text="Refresh" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="vehicleTab" text="Vehicle">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="vehicleTableView" prefHeight="568.0" prefWidth="640.0" />
+                        <Button fx:id="createVehicleButton" layoutX="689.0" layoutY="65.0" mnemonicParsing="false" onAction="#createVehicleButtonOnAction" prefHeight="32.0" prefWidth="69.0" text="Create" />
+                        <TextField fx:id="vehicleTextField" layoutX="648.0" layoutY="129.0" prefHeight="26.0" prefWidth="145.0" promptText="Enter license plate:" />
+                        <ComboBox fx:id="vehicleComboBox" layoutX="646.0" layoutY="175.0" prefWidth="150.0" promptText="Select column:" />
+                        <TextField fx:id="vehicleUpdateTextField" layoutX="646.0" layoutY="218.0" promptText="Enter value:" />
+                        <Button fx:id="updateVehicleButton" layoutX="686.0" layoutY="254.0" mnemonicParsing="false" onAction="#updateVehicleButtonOnAction" prefHeight="32.0" prefWidth="69.0" text="Update" />
+                        <Button fx:id="deleteVehicleButton" layoutX="686.0" layoutY="302.0" mnemonicParsing="false" onAction="#deleteVehicleButtonOnAction" prefHeight="32.0" prefWidth="69.0" text="Delete" />
+                        <Button fx:id="refreshVehicleButton" layoutX="696.0" layoutY="495.0" mnemonicParsing="false" onAction="#refreshVehicleButtonOnAction" text="Refresh" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="destinationTab" text="Destination">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="destinationTableView" prefHeight="568.0" prefWidth="640.0" />
+                        <Button fx:id="createDestinationButton" layoutX="687.0" layoutY="60.0" mnemonicParsing="false" onAction="#createDestinationButtonOnAction" prefHeight="32.0" prefWidth="69.0" text="Create" />
+                        <TextField fx:id="destinationTextField" layoutX="649.0" layoutY="127.0" prefHeight="26.0" prefWidth="145.0" promptText="Enter ID:" />
+                        <ComboBox fx:id="destinationComboBox" layoutX="647.0" layoutY="173.0" prefWidth="150.0" promptText="Select column:" />
+                        <TextField fx:id="destinationUpdateTextField" layoutX="647.0" layoutY="215.0" promptText="Enter value:" />
+                        <Button fx:id="updateDestinationButton" layoutX="688.0" layoutY="261.0" mnemonicParsing="false" onAction="#updateDestinationButtonOnAction" prefHeight="32.0" prefWidth="69.0" text="Update" />
+                        <Button fx:id="deleteDestinationButton" layoutX="688.0" layoutY="311.0" mnemonicParsing="false" onAction="#deleteDestinationButtonOnAction" prefHeight="32.0" prefWidth="69.0" text="Delete" />
+                        <Button fx:id="refreshDestinationButton" layoutX="695.0" layoutY="481.0" mnemonicParsing="false" onAction="#refreshDestinationButtonOnAction" text="Refresh" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="cargoTab" text="Cargo">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="cargoTableView" layoutX="-1.0" layoutY="-1.0" prefHeight="568.0" prefWidth="640.0" />
+                        <Button fx:id="updateCargoButton" layoutX="688.0" layoutY="245.0" mnemonicParsing="false" onAction="#updateCargoButtonOnAction" prefHeight="32.0" prefWidth="69.0" text="Update" />
+                        <TextField fx:id="cargoTextField" layoutX="650.0" layoutY="116.0" prefHeight="26.0" prefWidth="145.0" promptText="Enter ID:" />
+                        <Button fx:id="deleteCargoButton" layoutX="688.0" layoutY="302.0" mnemonicParsing="false" onAction="#deleteCargoButtonOnAction" prefHeight="32.0" prefWidth="69.0" text="Delete" />
+                        <Button fx:id="createCargoButton" layoutX="689.0" layoutY="54.0" mnemonicParsing="false" onAction="#createCargoButtonOnAction" prefHeight="32.0" prefWidth="69.0" text="Create" />
+                        <ComboBox fx:id="cargoComboBox" layoutX="648.0" layoutY="163.0" prefWidth="150.0" promptText="Select column:" />
+                        <TextField fx:id="cargoUpdateTextField" layoutX="649.0" layoutY="203.0" promptText="Enter value:" />
+                        <Button fx:id="refreshCargoButton" layoutX="695.0" layoutY="478.0" mnemonicParsing="false" onAction="#refreshCargoButtonOnAction" text="Refresh" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Account">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <PasswordField fx:id="accountCurrentPasswordTextField" layoutX="597.0" layoutY="81.0" promptText="Current password:" />
+                        <PasswordField fx:id="accountNewPasswordTextField" layoutX="597.0" layoutY="145.0" promptText="New password:" />
+                        <PasswordField fx:id="accountRepeatNewPasswordTextField" layoutX="597.0" layoutY="208.0" promptText="Repeat new password:" />
+                        <Text layoutX="607.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change password" textAlignment="CENTER" wrappingWidth="129.13671875">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <Line endX="8.0" endY="514.0" layoutX="525.0" layoutY="55.0" startX="8.0" startY="-62.0" />
+                        <Button fx:id="changePasswordButton" layoutX="616.0" layoutY="286.0" mnemonicParsing="false" onAction="#changePasswordButtonOnAction" prefHeight="36.0" prefWidth="111.0" text="Change password">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="changePasswordLabel" alignment="CENTER" layoutX="539.0" layoutY="250.0" prefHeight="21.0" prefWidth="255.0" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
